@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #4CAF50;         /* Verde suave */
+  --primary-color-darker: #388E3C;  /* Verde mais escuro */
+  --secondary-color: #f4f6f7;       /* Cor de fundo neutra */
+  --text-color: #333333;            /* Cor do texto */
+  --accent-color: #FFC107;          /* Cor de destaque */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--secondary-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ======== Título ======== */
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;    /* sem caixa alta forçada */
+  letter-spacing: 1px;     /* menos espaçamento */
+  margin-bottom: 1rem;     /* reduzido */
+  color: var(--primary-color);
+}
+
+/* ======== Grupo Input + Botão ======== */
+.container > p {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-tarefa {
+  flex: 1;
+  font-size: 1.1rem;
+  height: 50px;
+  padding: 0 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-tarefa::placeholder {
+  color: #aaa;
+}
+
+.input-tarefa:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
+  outline: none;
+}
+
+.btn-tarefa {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  height: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          transform 0.2s ease,
+          box-shadow 0.3s ease;
+}
+
+.btn-tarefa:hover {
+  background-color: var(--primary-color-darker);
+  border-color: var(--primary-color-darker);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-tarefa:active {
+  transform: scale(1);
+}
+
+.btn-tarefa:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.4);
+}
+
+/* ======== Lista de tarefas ======== */
+ul.tarefas {
+  list-style: none;
+  padding: 0;
+}
+
+ul.tarefas li {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  background: #f9f6f6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+}
+
+ul.tarefas li:hover {
+  background: #f1f1f1;
+}
+
+ul.tarefas li.completed {
+  background: #e8f5e9;
+  text-decoration: line-through;
+}
+
+ul.tarefas li span {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+/* ======== Botão “Apagar” ======== */
+ul.tarefas li .apagar {
+  background-color: #f44336;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          transform 0.2s ease,
+          box-shadow 0.3s ease;
+}
+
+ul.tarefas li .apagar:hover {
+  background-color: #d32f2f;
+  border-color: #b71c1c;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+ul.tarefas li .apagar:active {
+  transform: scale(1);
+}
